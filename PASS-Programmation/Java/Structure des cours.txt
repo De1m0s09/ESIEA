@@ -1,0 +1,5 @@
+Programme :
+Chapitre 1 - Variables et opérateurs
+Chapitre 2 - Structures répétitives/itératives (while) et conditionnelles (if)
+Chapitre 3 - Fonctions
+Chapitre 4 - Tableaux et string, complexité des algos
