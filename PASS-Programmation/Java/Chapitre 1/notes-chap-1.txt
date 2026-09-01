@@ -1,0 +1,45 @@
+Fondamentaux de la prog Java
+
+lien vers le cours : https://learning.esiea.fr/pluginfile.php/41636/mod_resource/content/6/ESIEASéance%201%20-%20PASS%20Java.pdf
+
+-Intro Algorithmie
+-Structures de base d'un programme Java
+-Variables
+
+En Java, un fichier = une fonction/un objet, fonctionnement lié au fait que le langage soit orienté objet
+Structure de base d'une fonction Java :
+    [visibilité][modificateur]
+Commentaires avec //, commentaires sur plusieurs lignes avec /* */
+
+
+
+Intro :
+Calculer la moyenne de trois nombres, rédiger en pseudo-code
+
+définir fonction:
+a = input as float
+b = input as  float
+c = input as float
+d = somme a+b+c as float
+e = d/3 as float
+afficher e
+
+Correction attendue :
+
+DEBUT
+//déclaration des Variables
+a:réel (ou float)
+b:réel
+c:réel
+d:réel
+e:réel
+//lecture des données
+lire(a)
+lire(b)
+lire(c)
+//traitement
+d=a+b+c
+e=d/3
+//sortie
+afficher e
+FIN

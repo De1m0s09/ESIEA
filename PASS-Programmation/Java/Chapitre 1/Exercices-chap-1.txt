@@ -1,0 +1,53 @@
+Exercice 2 - type de données:
+age d'un étudiant > byte / short / int / long
+population d'un pays > int / long
+prix d'un article avec centimes > float / double
+le fait qu'un étudiant soit admis ou non > boolean 
+première lettre d'un nom de famille > char
+nombre d'étoiles dans la galaxie > long
+
+Exercice 3 - Conversion implicite et explicite :
+Les conversions consistent à traduire des type de données en autres types de données
+Elles peuvent être implicites (passer de moins "fort" mathématique à plus "fort") ou explicites (lorsque le type d'origine est plus fort que le type de destination)
+
+int a = 15;
+double b = a; 
+
+ici, on cherche à convertir un int en réel (devient 15.0)
+
+int a = 15;
+double b = a; implicite, compile, car un int peut être traduit en double
+
+double c = 9.8;
+int d = c; explicite, ne compile pas, car 9.8 ne peut pas être un entier
+
+double e = 9.8;
+int f = (int) e; explicite, compile car (int) e va rendre une troncature de 9.8, soit 9
+
+long g = 100;
+int h = g; explicite, ne compile pas, car 100 est enregistré comme long, type trop grand pour être contenu dans un int (même si 100 peut être un int)
+
+
+Exercice 4 :
+int a = 7, b = 2;
+System.out.println(a/b); la ligne affiche 3 (l'entier tronqué de 7/2)
+
+double x = 7, y = 2;
+System.out.println(x/y); affiche 3,5 car double prend en charge les décimales
+
+Exercice 5 :
+A) 2+3*4 retourne 14
+B) (2+3) * 4 retourne 20
+C) 10%3+1 retourne 2 car 10%3 est impair donc = 1 
+D) 5 > 3 && 2 < 1 retourne False car && correspond à "et" logique, 2 < 1 = False et True + False = False
+E) 5>3 || 2 < 1 retourne True car || signifie "ou" logique, teste si une des propositions estvraie, ici 5>3 True donc True
+F) 8-2*3+1 retourne 3
+
+int i = 5,j;
+double x = 5,0;
+j=i/2; ce code n'est pas correct car il rend 2.5, et il n'a pas été précisé qu'il fallait tronquer
+j=x/2; ce code n'est pas correct car on tente de faire j=x/2 sans convertir x en int
+
+double x=2.75;
+int y = (int) x*2;
+int z = (int) (x*2); ici,  y=4 et z=5

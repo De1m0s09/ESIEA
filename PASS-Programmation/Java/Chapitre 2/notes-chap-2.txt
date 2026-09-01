@@ -1,0 +1,9 @@
+Structures conditionnelles :
+if ... then ... else
+
+Il existe aussi la syntaxe Switch permettant un choix multiple selon les conditions de déclenchement
+On préfère utiliser switch lorsque le nombre d'issues est précis
+
+Structures répétitives :
+while
+For

@@ -1,0 +1,2 @@
+Les méthodes sont similaires aux fonctions.
+On va les définir dans des fichiers à part, pour pouvoir les appeler dans un code "Main", sans créer un seul fichier extrêmement lourd.
