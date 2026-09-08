@@ -1,0 +1,14 @@
+Traitement numérique du signal
+
+Un signal est une manifestation physique mesurable d'une information à transmettre.
+Cela peut être par exemple une onde acoustique (traduite sous forme de signal électrique par un micro) ou encore un signal électrique dans un circuit
+
+Notion du bruit : perturbations pouvant gêner la perception ou l'interprétation du signal
+
+Rapport signal sur bruit (RSB) : Mesure de la quantité de bruit contenu dans le signal
+	Exprimé par le rapport entre les puissances du signal (Ps) et du bruit (Pb)
+	Le RSB est exprimé en décibels (dB)
+
+RSBdb = 10log(Ps/Pb)
+
+Début : signaux analogiques, analyse corrélative des signaux, analyse fréquentielle du signal
