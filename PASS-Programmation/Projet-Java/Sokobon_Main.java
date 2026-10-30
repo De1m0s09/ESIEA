@@ -6,10 +6,13 @@ class Sokobon_Main {
     int joueur_ligne = 0;
     int joueur_colonne = 0;
     int position_joueur = 0;
-
+    int indice_caisse = 0;
+    int indice_suivant= 0;
+    int check_mur = 0;
+    int compteur = 0;
     static char[] niveau_actuel;
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         Sokobon_Main jeu = new Sokobon_Main();
 
@@ -35,7 +38,7 @@ class Sokobon_Main {
         }
     }
 
-    public static int MenuSelect() {
+    public int MenuSelect() {
 
         Scanner sc = new Scanner(System.in);
 
@@ -52,12 +55,15 @@ class Sokobon_Main {
         switch (choix) {
             case 1:
                 System.out.println("Vous avez choisi le niveau " + choix);
+                niveau1();
                 break;
             case 2:
                 System.out.println("Vous avez choisi le niveau " + choix);
+                niveau2();
                 break;
             case 3:
                 System.out.println("Vous avez choisi le niveau " + choix);
+                niveau3();
                 break;
             case 4:
                 System.out.println("Règles du jeu :");
@@ -102,34 +108,41 @@ class Sokobon_Main {
         Scanner sc = new Scanner(System.in);
         String step = sc.nextLine();
 
-        int indice;
 
         switch (step) {
             case "z":
                 System.out.println("Vous avez choisi de monter");
                 joueur_ligne--;
-                indice = joueur_ligne * 8 + joueur_colonne;
+                indice_suivant = joueur_ligne * 8 + joueur_colonne;
+                indice_caisse=indice_suivant-8;
+                check_mur = indice_suivant-8;
                 verif_case();
                 break;
 
             case "s":
                 System.out.println("Vous avez choisi de descendre");
                 joueur_ligne++;
-                indice = joueur_ligne * 8 + joueur_colonne;
+                indice_suivant = joueur_ligne * 8 + joueur_colonne;
+                indice_caisse=indice_suivant+8;
+                check_mur=indice_suivant+8;
                 verif_case();
                 break;
 
             case "d":
                 System.out.println("Vous avez choisi d'aller à droite");
                 joueur_colonne++;
-                indice = joueur_ligne * 8 + joueur_colonne;
+                indice_suivant = joueur_ligne * 8 + joueur_colonne;
+                indice_caisse=indice_suivant+1;
+                check_mur=indice_suivant+1;
                 verif_case();
                 break;
 
             case "q":
                 System.out.println("Vous avez choisi d'aller à gauche");
                 joueur_colonne--;
-                indice = joueur_ligne * 8 + joueur_colonne;
+                indice_suivant = joueur_ligne * 8 + joueur_colonne;
+                indice_caisse=indice_suivant-1;
+                check_mur=indice_suivant-1;
                 verif_case();
                 break;
 
@@ -159,26 +172,42 @@ class Sokobon_Main {
 
         boucle();
     }
+    public void verif_win(){
+        for (int i = 0; i < niveau_actuel.length; i++) {
+            if (niveau_actuel[i] == '.') {
+                public int indice_win=i;
+            }
+        }
+        if (niveau_actuel[indice_caisse]==indice_win){
 
+        }
+    }
     public void verif_case() {
+        compteur++;
+        int indice_suivant = joueur_ligne * 8 + joueur_colonne;
 
-        int indice = joueur_ligne * 8 + joueur_colonne;
-
-        if (niveau_actuel[indice] == '#') {
+        if (niveau_actuel[indice_suivant] == '#') {
+            System.out.println("Vous ne pouvez pas aller sur un mur");
+            boucle();
+        }
+        else if (niveau_actuel[check_mur]=='#'){
             System.out.println("Vous ne pouvez pas aller sur un mur");
             boucle();
         }
 
-        else if (niveau_actuel[indice] == ' ') {
-            niveau_actuel[indice] = '@';
+        else if (niveau_actuel[indice_suivant] == ' ') {
+            niveau_actuel[indice_suivant] = '@';
             niveau_actuel[position_joueur] = ' ';
         }
 
-        else if (niveau_actuel[indice] == '$') {
-            niveau_actuel[indice-8] = '$';
-            niveau_actuel[indice] = '@';
+        else if (niveau_actuel[indice_suivant] == '$') {
+            niveau_actuel[indice_caisse]='$';       
+            niveau_actuel[indice_suivant] = '@';
             niveau_actuel[position_joueur] = ' ';
 
+        }
+        else if (niveau_actuel[indice_suivant]== '.'){
+                     
         }
     }
 
