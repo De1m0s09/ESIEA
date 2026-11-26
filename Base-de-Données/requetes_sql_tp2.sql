@@ -1,6 +1,7 @@
 select titre from film order by titre asc;
 select nom, annee_naissance from artiste where annee_naissance < 1950 order by nom asc;
 select nom_cinema from cinema where arrondissement = 12;
+
 select * from artiste where nom like 'H%';
 select * from artiste where annee_naissance is null;
 select count(*) from role where nom_acteur = 'Willis';
